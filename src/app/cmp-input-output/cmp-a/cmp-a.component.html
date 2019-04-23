@@ -1,0 +1,8 @@
+
+<p>Me llamo: {{ nombre }}</p>
+
+<div>
+    <label for="nameChanged"> Cambiame</label>
+    <input type="text" placeholder="Nombre a cambiar" #inputNombre>
+    <button type="button" (click)="cambiarNombre(inputNombre.value)">Cambiar nombre</button>
+</div>

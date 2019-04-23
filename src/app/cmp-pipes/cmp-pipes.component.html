@@ -1,0 +1,19 @@
+
+<div>
+
+  <div>
+    <h1>{{nombre | reverse | uppercase}}</h1>
+    <span>{{precio | currency:'EUR'}}</span> <br/>
+    <span>{{precio | double:4:2 | currency:'EUR'}}</span>
+  </div>
+
+  <!-- <p>{{descripcion | slice:0:64}}</p> -->
+  <p>{{descripcion | hide}}</p>
+  <p> Fecha de compra: {{fecha | date:'dd/MM/yyyy'}}</p>
+
+  <input type="text" (change)="addNombre($event.target.value)" placeholder="Intro para añadir el nombre">
+  <ul>
+    <li *ngFor="let nombre of nombres | filtro:'a'">{{i}} {{nombre}}</li>
+  </ul>
+
+</div>

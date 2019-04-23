@@ -1,0 +1,28 @@
+<h1>Directivas</h1>
+<h2>Estructurales</h2>
+<button type="button" (click)="cambiarMostrar()">Mostrar: {{ mostrar? "Si":"No"}} </button>
+<!-- <p *ngIf="mostrar">Yay!</p> -->
+<p *ngIf="mostrar; else else1">Yay!</p>
+<ng-template #else1>
+  <p> Nope </p>
+</ng-template>
+
+<ul>
+  <li *ngFor="let mascota of mascotas; let i = index">{{i}} {{mascota}}</li>
+</ul>
+
+<div [ngSwitch]="miMascota">
+  <p *ngSwitchCase="'Gato'">Tengo un gato</p>
+  <p *ngSwitchCase="'Perro'">Tengo un perro</p>
+  <p *ngSwitchDefault>Tengo otra mascota</p>
+</div>
+
+<h2>Atributos</h2>
+<p [ngClass]="getClases()">Un texto azul subrayado</p>
+<p [ngStyle]="{color: 'yellow', backgroundColor: 'black'}">Un texto amarillo con fondo negro</p>
+
+<p appMarcar>Texto marcado en rojo</p>
+<p appMarcar colorFondo="green">Texto marcado en verde</p>
+<p appMarcar colorFondo="blue">Texto marcado en azul</p>
+
+<input [appPowermode]="'blue'">
